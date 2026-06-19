@@ -1,0 +1,31 @@
+{
+  "name": "get-to-know-me",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:daemon": "pm2 start ecosystem.config.cjs",
+    "dev:daemon:stop": "pm2 stop get-to-know-me-dev",
+    "dev:daemon:restart": "pm2 restart get-to-know-me-dev",
+    "dev:daemon:status": "pm2 status get-to-know-me-dev",
+    "dev:daemon:logs": "pm2 logs get-to-know-me-dev --lines 50",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
