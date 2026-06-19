@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3010",
     "dev:daemon": "pm2 start ecosystem.config.cjs",
     "dev:daemon:stop": "pm2 stop get-to-know-me-dev",
     "dev:daemon:restart": "pm2 restart get-to-know-me-dev",
