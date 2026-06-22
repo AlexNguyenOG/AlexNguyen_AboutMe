@@ -24,3 +24,142 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(2deg);
+  }
+}
+
+@keyframes float-delayed {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(12px) rotate(-2deg);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes eye-wiggle {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-3px) rotate(-4deg);
+  }
+  50% {
+    transform: translateX(3px) rotate(4deg);
+  }
+  75% {
+    transform: translateX(-2px) rotate(-2deg);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 10s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 4s ease-in-out infinite;
+}
+
+.animate-eye-wiggle {
+  animation: eye-wiggle 2.8s ease-in-out infinite;
+}
+
+@keyframes flag-wave {
+  0%,
+  100% {
+    transform: perspective(200px) rotateY(0deg) skewY(0deg);
+  }
+  25% {
+    transform: perspective(200px) rotateY(8deg) skewY(1.5deg);
+  }
+  50% {
+    transform: perspective(200px) rotateY(0deg) skewY(0deg);
+  }
+  75% {
+    transform: perspective(200px) rotateY(-8deg) skewY(-1.5deg);
+  }
+}
+
+.animate-flag-wave {
+  animation: flag-wave 2.4s ease-in-out infinite;
+}
+
+@keyframes cat-sit {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes cat-groom {
+  0%,
+  35% {
+    transform: rotate(0deg);
+  }
+  50%,
+  65% {
+    transform: rotate(5deg);
+  }
+  80%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes cat-tongue {
+  0%,
+  42% {
+    opacity: 0;
+    transform: scaleY(0.4);
+  }
+  52%,
+  64% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  74%,
+  100% {
+    opacity: 0;
+    transform: scaleY(0.4);
+  }
+}
+
+.animate-cat-sit {
+  transform-origin: 50px 75px;
+  animation: cat-sit 4s ease-in-out infinite;
+}
+
+.animate-cat-groom {
+  animation: cat-groom 3.5s ease-in-out infinite;
+}
+
+.animate-cat-tongue {
+  transform-origin: 46px 47px;
+  animation: cat-tongue 3.5s ease-in-out infinite;
+}
