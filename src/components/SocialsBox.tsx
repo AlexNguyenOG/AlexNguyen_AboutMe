@@ -55,7 +55,7 @@ export function SocialsBox() {
           </a>
 
           <a
-            href="https://web.telegram.org/a/#8014462937"
+            href="https://t.me/AlexNguyenOG"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex w-full items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 transition hover:border-sky-400/40 hover:bg-sky-500/10"
@@ -63,7 +63,7 @@ export function SocialsBox() {
             <TelegramLogo />
             <div className="flex flex-col items-start gap-0.5">
               <span className="text-lg font-medium text-zinc-100 group-hover:text-sky-200">
-                Telegram
+                @AlexNguyenOG
               </span>
               <span className="text-sm font-light text-zinc-400 group-hover:text-zinc-300">
                 Message me on Telegram
