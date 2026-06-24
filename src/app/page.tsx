@@ -1,3 +1,4 @@
+import { KeySolLink } from "@/components/KeySolLink";
 import { CatPersonBox } from "@/components/CatPersonBox";
 import { ClosingBox } from "@/components/ClosingBox";
 import { SocialsBox } from "@/components/SocialsBox";
@@ -23,14 +24,7 @@ export default function Home() {
         </p>
         <p className="max-w-2xl text-xl font-light leading-relaxed text-zinc-100/90">
           If you already didn&apos;t know, I&apos;m the creator of{" "}
-          <a
-            href="https://keysol.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-sky-300 underline decoration-sky-400/40 underline-offset-4 transition hover:text-sky-200"
-          >
-            keysol
-          </a>
+          <KeySolLink />
           , the website where you can find what keyboard fits you.
         </p>
 

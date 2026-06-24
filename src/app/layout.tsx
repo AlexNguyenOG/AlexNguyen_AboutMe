@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Get to Know Me — Alex",
   description:
-    "A personal site to learn about Alex — creator of Keysol, Solana student, and more.",
+    "A personal site to learn about Alex — creator of KeySol, Solana student, and more.",
   robots: {
     index: true,
     follow: true,

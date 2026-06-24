@@ -1,3 +1,16 @@
+import { KEYSOL_NAME, KEYSOL_URL } from "@/lib/site";
+
+function KeySolLogo() {
+  return (
+    <span
+      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-emerald-400 text-sm font-bold text-zinc-950"
+      aria-hidden
+    >
+      K
+    </span>
+  );
+}
+
 function TelegramLogo() {
   return (
     <svg
@@ -37,6 +50,23 @@ export function SocialsBox() {
         </span>
 
         <div className="flex w-full flex-col gap-3">
+          <a
+            href={KEYSOL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex w-full items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 transition hover:border-violet-400/40 hover:bg-violet-500/10"
+          >
+            <KeySolLogo />
+            <div className="flex flex-col items-start gap-0.5">
+              <span className="text-lg font-medium text-zinc-100 group-hover:text-violet-200">
+                {KEYSOL_NAME}
+              </span>
+              <span className="text-sm font-light text-zinc-400 group-hover:text-zinc-300">
+                Find your perfect keyboard
+              </span>
+            </div>
+          </a>
+
           <a
             href="https://x.com/AlexNguyenOG"
             target="_blank"
