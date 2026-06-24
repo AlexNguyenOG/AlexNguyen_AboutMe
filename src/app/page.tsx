@@ -1,5 +1,6 @@
 import { CatPersonBox } from "@/components/CatPersonBox";
 import { ClosingBox } from "@/components/ClosingBox";
+import { SocialsBox } from "@/components/SocialsBox";
 import { HeritageBox } from "@/components/HeritageBox";
 import { CursorStoryBox } from "@/components/CursorStoryBox";
 import { DreamBox } from "@/components/DreamBox";
@@ -21,8 +22,16 @@ export default function Home() {
           currently enrolled as a student in solana.
         </p>
         <p className="max-w-2xl text-xl font-light leading-relaxed text-zinc-100/90">
-          If you already didn&apos;t know, I&apos;m the creator of keysol, the
-          website where you can find what keyboard fits you.
+          If you already didn&apos;t know, I&apos;m the creator of{" "}
+          <a
+            href="https://keysol.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-sky-300 underline decoration-sky-400/40 underline-offset-4 transition hover:text-sky-200"
+          >
+            keysol
+          </a>
+          , the website where you can find what keyboard fits you.
         </p>
 
         <LocationSection />
@@ -33,6 +42,7 @@ export default function Home() {
           <FunFactBox />
           <HeritageBox />
           <CatPersonBox />
+          <SocialsBox />
         </div>
 
         <ClosingBox />

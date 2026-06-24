@@ -63,10 +63,19 @@ export function CursorStoryBox() {
           </span>
           <p className="text-lg font-light leading-relaxed text-zinc-100/90">
             Lately I&apos;ve been having fun with the AI, cursor. And because of
-            it, I was able to build Keysol. I mess around and by the time you
-            see this &quot;My get to know me&quot; website, it was made from
-            cursor AI, amazing right? Currently, I&apos;m in SF with family. The
-            connections here were amazing.
+            it, I was able to build{" "}
+            <a
+              href="https://keysol.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-sky-300 underline decoration-sky-400/40 underline-offset-4 transition hover:text-sky-200"
+            >
+              Keysol
+            </a>
+            . I mess around and by the time you see this &quot;My get to know
+            me&quot; website, it was made from cursor AI, amazing right?
+            Currently, I&apos;m in SF with family. The connections here were
+            amazing.
           </p>
         </div>
       </div>

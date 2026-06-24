@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const isProduction = process.env.NODE_ENV === "production";
 
-const contentSecurityPolicy = [
+const productionContentSecurityPolicy = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline'",
   "style-src 'self' 'unsafe-inline'",
@@ -14,17 +14,24 @@ const contentSecurityPolicy = [
   "base-uri 'self'",
   "form-action 'self'",
   "frame-ancestors 'none'",
-  ...(isProduction ? ["upgrade-insecure-requests"] : []),
+  "upgrade-insecure-requests",
 ].join("; ");
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   async headers() {
+    if (!isProduction) {
+      return [];
+    }
+
     return [
       {
         source: "/(.*)",
         headers: [
-          { key: "Content-Security-Policy", value: contentSecurityPolicy },
+          {
+            key: "Content-Security-Policy",
+            value: productionContentSecurityPolicy,
+          },
           { key: "X-DNS-Prefetch-Control", value: "on" },
         ],
       },
