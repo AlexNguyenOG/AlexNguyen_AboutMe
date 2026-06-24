@@ -81,15 +81,18 @@ function Marker({
 }
 
 function EarthBody() {
-  const [colorMap, normalMap, specularMap, cloudsMap] = useTexture([
-    "/textures/earth-day.jpg",
-    "/textures/earth-normal.jpg",
-    "/textures/earth-specular.jpg",
-    "/textures/earth-clouds.png",
-  ]);
-
-  colorMap.colorSpace = THREE.SRGBColorSpace;
-  cloudsMap.colorSpace = THREE.SRGBColorSpace;
+  const [colorMap, normalMap, specularMap, cloudsMap] = useTexture(
+    [
+      "/textures/earth-day.jpg",
+      "/textures/earth-normal.jpg",
+      "/textures/earth-specular.jpg",
+      "/textures/earth-clouds.png",
+    ],
+    (textures) => {
+      textures[0].colorSpace = THREE.SRGBColorSpace;
+      textures[3].colorSpace = THREE.SRGBColorSpace;
+    },
+  );
 
   const cloudsRef = useRef<Mesh>(null);
 
@@ -250,6 +253,10 @@ export function GlobeMap({
 
       <p className="text-xs text-zinc-400">
         Green pin: Arkansas · Pink pin: you · Drag to explore the world
+      </p>
+      <p className="max-w-md text-xs text-zinc-500">
+        Location stays in your browser until you allow it. Coordinates are only
+        used to show distance and timezone, and are not saved.
       </p>
     </div>
   );

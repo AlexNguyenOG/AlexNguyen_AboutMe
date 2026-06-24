@@ -1,4 +1,5 @@
 import { CatPersonBox } from "@/components/CatPersonBox";
+import { ClosingBox } from "@/components/ClosingBox";
 import { HeritageBox } from "@/components/HeritageBox";
 import { CursorStoryBox } from "@/components/CursorStoryBox";
 import { DreamBox } from "@/components/DreamBox";
@@ -33,6 +34,8 @@ export default function Home() {
           <HeritageBox />
           <CatPersonBox />
         </div>
+
+        <ClosingBox />
       </div>
     </main>
   );

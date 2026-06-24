@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import {
   ARKANSAS,
   milesBetween,
@@ -80,10 +80,6 @@ export function LocationSection() {
       },
     );
   }, []);
-
-  useEffect(() => {
-    locate();
-  }, [locate]);
 
   return (
     <GlobeMap

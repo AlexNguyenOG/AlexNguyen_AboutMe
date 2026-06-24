@@ -1,10 +1,3 @@
-type ReverseGeocodeResponse = {
-  city?: string;
-  locality?: string;
-  principalSubdivision?: string;
-  countryName?: string;
-};
-
 const CASUAL_PLACE_NAMES: Record<string, string> = {
   "San Francisco": "San Fran",
   "Los Angeles": "LA",
@@ -22,27 +15,18 @@ export async function getPlaceName(
 ): Promise<string | null> {
   try {
     const params = new URLSearchParams({
-      latitude: String(lat),
-      longitude: String(lng),
-      localityLanguage: "en",
+      lat: String(lat),
+      lng: String(lng),
     });
 
-    const response = await fetch(
-      `https://api.bigdatacloud.net/data/reverse-geocode-client?${params.toString()}`,
-    );
+    const response = await fetch(`/api/geocode?${params.toString()}`);
 
     if (!response.ok) {
       return null;
     }
 
-    const data = (await response.json()) as ReverseGeocodeResponse;
-    const rawName =
-      data.city ||
-      data.locality ||
-      data.principalSubdivision ||
-      data.countryName;
-
-    return rawName ? formatPlaceName(rawName) : null;
+    const data = (await response.json()) as { placeName?: string | null };
+    return data.placeName ? formatPlaceName(data.placeName) : null;
   } catch {
     return null;
   }

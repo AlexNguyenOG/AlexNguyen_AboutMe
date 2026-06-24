@@ -19,23 +19,18 @@ export async function getTimezone(
 ): Promise<string | null> {
   try {
     const params = new URLSearchParams({
-      latitude: String(lat),
-      longitude: String(lng),
+      lat: String(lat),
+      lng: String(lng),
     });
 
-    const response = await fetch(
-      `https://api.bigdatacloud.net/data/timezone-by-location?${params.toString()}`,
-    );
+    const response = await fetch(`/api/timezone?${params.toString()}`);
 
     if (!response.ok) {
       return null;
     }
 
-    const data = (await response.json()) as {
-      timezone?: { ianaName?: string };
-    };
-
-    return data.timezone?.ianaName ?? null;
+    const data = (await response.json()) as { timeZone?: string | null };
+    return data.timeZone ?? null;
   } catch {
     return null;
   }
